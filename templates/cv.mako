@@ -327,7 +327,7 @@
         <div class="two columns">
           <p>2019</p>
         </div>
-        <div class="nine columns">
+        <div class="ten columns">
           <p class="text-bold">SAP BW/4HANA (BW462)</p>
         </div>
       </div>
@@ -336,7 +336,7 @@
         <div class="two columns">
           <p>2017</p>
         </div>
-        <div class="nine columns">
+        <div class="ten columns">
           <p class="text-bold">openSAP: SAP Business Warehouse powered by SAP HANA</p>
         </div>
       </div>
@@ -345,10 +345,45 @@
         <div class="two columns">
           <p>2013 - 2016</p>
         </div>
-        <div class="nine columns">
+        <div class="ten columns">
           <p class="text-bold">Bachelor in Applied Computer Science</p>
           <p>Thomas More, Geel (Belgium)</p>
           <p>Specialization: Business Intelligence</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="twelve columns">
+          <h2>Communication skills</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="two columns">
+          <p class="text-bold">Dutch</p>
+        </div>
+        <div class="ten columns">
+          <p>Mother tongue</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="two columns">
+          <p class="text-bold">English</p>
+        </div>
+        <div class="ten columns">
+          <p>Fluent</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="two columns">
+          <p class="text-bold">French</p>
+        </div>
+        <div class="ten columns">
+          <p>Basic</p>
         </div>
       </div>
     </div>
