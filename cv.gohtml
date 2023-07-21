@@ -80,28 +80,20 @@
 
       <div class="row">
         <div class="four columns">
-          <p class="text-bold">Personal experience</p>
+          <p class="text-bold">Professional experience</p>
           <ul>
-            <li>Linux (10+ years)</li> <!-- Since 2010 -->
-            <li>Docker / Podman (5+ years)</li> <!-- Since 2018 -->
-            <li>Kubernetes</li>
-            <li>Python</li>
-            <li>Web development</li>
-            <li>CI/CD</li>
-            <li>JavaScript</li>
+            {{ range .Data.cv.experience.professional }}
+              <li>{{ . }}</li>
+            {{ end }}
           </ul>
         </div>
 
         <div class="four columns">
-          <p class="text-bold">Professional experience</p>
+          <p class="text-bold">Personal experience</p>
           <ul>
-            <li>Scrum / DevOps</li>
-            <li>Sector: Utilities, Products</li>
-            <li>SAP BW (3+ years)</li>
-            <li>SAP HANA (1 year)</li>
-            <li>Spotfire</li>
-            <li>SAP BO</li>
-            <li>SAS</li>
+            {{ range .Data.cv.experience.personal }}
+              <li>{{ . }}</li>
+            {{ end }}
           </ul>
         </div>
 
@@ -204,13 +196,56 @@
 
       <div class="row">
         <div class="twelve columns">
+          <h3>Skipr</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns">
+          <p>September 2021 - Present</p>
+        </div>
+        <div class="nine columns">
+          <p class="text-bold">System engineer and security officer</p>
+          <p>Roles &amp; Responsibilities:</p>
+          <ul>
+            <li>Management of infrastructure using Terraform</li>
+            <li>Monitoring and implementation of Kubernetes, Postgres and MongoDB on GCP</li>
+            <li>Automating builds and deployments using GitHub Actions</li>
+            <li>Co-responsible for ISO 27001 certification
+              <ul>
+                <li>Collaborating with external consultants on policies and setup of ISMS</li>
+                <li>Identification, assessment and treatment of risks</li>
+                <li>Setup of technical measures and missing processes</li>
+              </ul>
+            </li>
+            <li>Investigation and handling of security incidents and reported vulnerabilities</li>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns">
+          <p>March 2020 - Present</p>
+        </div>
+        <div class="nine columns">
+          <p class="text-bold">Backend developer Golang and Python</p>
+          <p>Roles &amp; Responsibilities:</p>
+          <ul>
+            <li>Implementation of new services and features in a microservice architecture</li>
+            <li>Debug and fix reported incidents with attention of existing business logic</li>
+            <li>Gather and address functional and technical requirements</li>
+            <li>Aligment and proposal of new coding principles with an ADR-based methodology</li>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twelve columns">
           <h3>Accenture: Technical BI consultant</h3>
         </div>
       </div>
 
       <div class="row">
         <div class="three columns">
-          <p>April 2019 - Present</p>
+          <p>April 2019 - February 2020</p>
         </div>
         <div class="nine columns">
           <p class="text-bold">SAP BW on HANA, SAP HANA and Spotfire in Products sector</p>
@@ -218,9 +253,7 @@
           <ul>
             <li>Development of new reporting requirements in a DevOps setup</li>
             <li>Impact analysis of SAP ECC upgrade to S/4HANA</li>
-            <li>Improving team efficiency by creating helpers
-              (e.g. ${link('https://hana-tools.jensw.be/cv-renamer.html', 'CV Renamer')})
-              and documentation</li>
+            <li>Improving team efficiency by creating internal tools and documentation</li>
             <li>Train and support client employees on technical aspects of SAP BW on HANA</li>
         </div>
       </div>

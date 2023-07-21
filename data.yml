@@ -3,6 +3,24 @@ contact:
   email: sollicitatie@jensw.be
   github: JenswBE
 
+experience:
+  professional:
+    - Kubernetes
+    - Terraform
+    - Google Cloud Platform
+    - GitHub Actions
+    - Docker / Podman # Personally since 2018
+    - Golang
+    - Python
+    - Sprinto (security compliance)
+  personal:
+    - Linux (10+ years) # Since 2010
+    - Ansible
+    - pfSense
+    - Graylog
+    - LibreNMS
+    - Keycloak
+
 certifications:
   - name: "SAP Certified Application Associate: BW/4HANA"
     year: 2019
