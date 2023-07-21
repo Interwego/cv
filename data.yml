@@ -1,0 +1,16 @@
+contact:
+  phone: +32 476 78 44 28
+  email: sollicitatie@jensw.be
+  github: JenswBE
+
+certifications:
+  - name: "SAP Certified Application Associate: BW/4HANA"
+    year: 2019
+    link: https://www.youracclaim.com/badges/67abd278-aca5-45fd-b1cd-dc01266ff297/public_url
+  - name: SAP Support Consultant Qualification
+    year: 2018
+  - name: ITIL Foundation
+    year: 2017
+  - name: LPI Essentials
+    year: 2014
+    link: https://lpi.org/v/LPI000303301/lptxml5wps

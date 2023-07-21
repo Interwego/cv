@@ -1,12 +1,1 @@
-# Blacklist all
-/**
-
-# Whitelist allowed
-!/README.md
-!/.gitignore
-
-!/data/
-!/data/cv.template.yml
-
-!/templates/
-!/templates/**
+output

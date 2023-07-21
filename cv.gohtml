@@ -1,25 +1,10 @@
-<%
-    personal = data['cv']['personal']
-
-    def link(url, desc):
-      return "<a href=\"{}\" target=\"_blank\">{}</a>".format(url, desc)
-
-    def github_url(repo):
-      return "https://github.com/{}/{}".format(personal['github'], repo)
-
-    def github_link(repo, desc):
-      return link(github_url(repo), desc)
-%>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <title>Jens Willemsens</title>
-  <link href="https://jensw.be/assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-  <link href="https://jensw.be/assets/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
-  <link href="https://jensw.be/assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <meta name="referrer" content="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css" integrity="sha256-nXC6R0O+3ez3B440sqRACd9wvr4A1cHmzr1K+2bINzk=" crossorigin="anonymous" />
   <style media="screen">
     .text-center {
@@ -77,10 +62,10 @@
         </div>
         <div class="seven columns personal">
           <h2>Jens Willemsens</h2>
-          <p>${personal['address']}</p>
-          <p>${personal['telephone']}</p>
-          <p><a href="mailto:${personal['email']}">${personal['email']}</a></p>
-          <p>GitHub: ${github_link('', personal['github'])}</p>
+          <p>Zaventem, Belgium</p>
+          <p><a href="tel:{{ .Data.cv.contact.phone }}">{{ .Data.cv.contact.phone }}</a></p>
+          <p><a href="mailto:{{ .Data.cv.contact.email }}">{{ .Data.cv.contact.email }}</a></p>
+          <p>GitHub: <a href="https://github.com/{{ .Data.cv.contact.github }}">{{ .Data.cv.contact.github }}</a></p>
 
         </div>
       </div>
@@ -97,8 +82,8 @@
         <div class="four columns">
           <p class="text-bold">Personal experience</p>
           <ul>
-            <li>Linux (8+ years)</li>
-            <li>Docker (2+ years)</li>
+            <li>Linux (10+ years)</li> <!-- Since 2010 -->
+            <li>Docker / Podman (5+ years)</li> <!-- Since 2018 -->
             <li>Kubernetes</li>
             <li>Python</li>
             <li>Web development</li>
@@ -123,10 +108,13 @@
         <div class="four columns">
           <p class="text-bold">Certifications</p>
           <ul>
-            <li>${link('https://www.youracclaim.com/badges/67abd278-aca5-45fd-b1cd-dc01266ff297/public_url', 'SAP Certified Application Associate: BW/4HANA')}</li>
-            <li>SAP Support Consultant Qualification</li>
-            <li>ITIL Foundation</li>
-            <li>${link('https://lpi.org/v/LPI000303301/lptxml5wps', 'LPI Essentials')}</li>
+            {{ range .Data.cv.certifications }}
+              {{ if .link }}
+              <li><a href="{{ .link }}">{{ .name }}</a></li>
+              {{ else }}
+              <li>{{ .name }}</li>
+              {{ end }}
+            {{ end }}
           </ul>
         </div>
       </div>
@@ -279,47 +267,36 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="two columns">
-          <p>2019</p>
+      {{ range .Data.cv.certifications }}
+        <div class="row">
+            <div class="two columns">
+              <p>{{ .year }}</p>
+            </div>
+            <div class="nine columns">
+            {{ if .link }}
+            <p><a href="{{ .link }}">{{ .name }}</a></p>
+            {{ else }}
+            <p>{{ .name }}</p>
+            {{ end }}
+          </div>
         </div>
-        <div class="nine columns">
-          <p>${link('https://www.youracclaim.com/badges/67abd278-aca5-45fd-b1cd-dc01266ff297/public_url', 'SAP Certified Application Associate: BW/4HANA')}</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="two columns">
-          <p>2018</p>
-        </div>
-        <div class="nine columns">
-          <p>SAP Support Consultant Qualification</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="two columns">
-          <p>2017</p>
-        </div>
-        <div class="nine columns">
-          <p>ITIL Foundation</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="two columns">
-          <p>2014</p>
-        </div>
-        <div class="nine columns">
-          <p>${link('https://lpi.org/v/LPI000303301/lptxml5wps', 'LPI Essentials')}</p>
-        </div>
-      </div>
+      {{ end }}
     </div>
 
     <div class="card">
       <div class="row">
         <div class="twelve columns">
           <h2>Education and Training</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="two columns">
+          <p>2022</p>
+        </div>
+        <div class="ten columns">
+          <p class="text-bold">Cybersecurity (6d)</p>
+          <p>Thomas More, Geel, Belgium</p>
         </div>
       </div>
 
@@ -347,7 +324,7 @@
         </div>
         <div class="ten columns">
           <p class="text-bold">Bachelor in Applied Computer Science</p>
-          <p>Thomas More, Geel (Belgium)</p>
+          <p>Thomas More, Geel, Belgium</p>
           <p>Specialization: Business Intelligence</p>
         </div>
       </div>
