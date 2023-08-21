@@ -34,3 +34,26 @@ certifications:
   - name: LPI Essentials
     year: 2014
     link: https://lpi.org/v/LPI000303301/lptxml5wps
+
+trainings:
+  - year: 2022
+    name: Cybersecurity (6d)
+    extra:
+      - Thomas More, Geel, Belgium
+  - year: 2019
+    name: SAP BW/4HANA (BW462)
+  - year: 2017
+    name: "openSAP: SAP Business Warehouse powered by SAP HANA"
+  - year: 2013 - 2016
+    name: Bachelor in Applied Computer Science
+    extra:
+      - Thomas More, Geel, Belgium
+      - "Specialization: Business Intelligence"
+
+languages:
+  - name: Dutch
+    level: Mother tongue
+  - name: English
+    level: Fluent
+  - name: French
+    level: Basic
