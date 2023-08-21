@@ -1,6 +1,6 @@
 module github.com/JenswBE/cv
 
-go 1.20
+go 1.21
 
 require (
 	github.com/JenswBE/go-pipeline v0.0.0-20230601173844-96658d50d1a2
