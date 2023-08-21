@@ -1,7 +1,9 @@
 contact:
   phone: +32 476 78 44 28
-  email: sollicitatie@jensw.be
-  github: JenswBE
+  email: jens@interwego.com
+  github:
+    - JenswBE
+    - Interwego
 
 experience:
   professional:
