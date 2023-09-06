@@ -30,14 +30,16 @@
       <div class="col-sm-6">
         <div class="text-center text-sm-start">
           <p class="fs-3">Jens Willemsens</h5>
-          <p>Zaventem, Belgium</p>
-          <p><a href="tel:{{ .Data.cv.contact.phone }}">{{ .Data.cv.contact.phone }}</a></p>
-          <p><a href="mailto:{{ .Data.cv.contact.email }}">{{ .Data.cv.contact.email }}</a></p>
-          <p>GitHub:
+          <p class="mb-1">Zaventem, Belgium</p>
+          <p class="mb-1"><a href="tel:{{ .Data.cv.contact.phone }}">{{ .Data.cv.contact.phone }}</a></p>
+          <p class="mb-1"><a href="mailto:{{ .Data.cv.contact.email }}">{{ .Data.cv.contact.email }}</a></p>
+          <p class="mb-3">GitHub:
             {{ range $i, $username := .Data.cv.contact.github -}}
             {{- if $i -}}, {{ end }}<a href="https://github.com/{{ $username }}">{{ $username }}</a>
             {{- end }}
           </p>
+          <p class="mb-1">Interwego BV</p>
+          <p>{{ .Data.cv.contact.vat_number }}</p>
         </div>
       </div>
     </div>
