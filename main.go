@@ -3,6 +3,7 @@ package main
 import (
 	"os/exec"
 
+	"github.com/JenswBE/cv/data"
 	"github.com/JenswBE/go-pipeline/pipeline"
 	"github.com/rs/zerolog/log"
 )
@@ -18,7 +19,11 @@ func main() {
 	pipeline.
 		NewHTML(nil).
 		WithOutputDir("output").
-		SetDataYAML("cv", "data.yml").
+		SetData("Certifications", data.GetCertifications()).
+		SetData("Contact", data.GetContact()).
+		SetData("Experience", data.GetExperience()).
+		SetData("Languages", data.GetLanguages()).
+		SetData("Trainings", data.GetTrainings()).
 		LoadRenderSingle("cv.gohtml", "index.html").
 		Must()
 }

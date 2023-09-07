@@ -29,17 +29,17 @@
       </div>
       <div class="col-sm-6">
         <div class="text-center text-sm-start">
-          <p class="fs-3">Jens Willemsens</h5>
-          <p class="mb-1">Zaventem, Belgium</p>
-          <p class="mb-1"><a href="tel:{{ .Data.cv.contact.phone }}">{{ .Data.cv.contact.phone }}</a></p>
-          <p class="mb-1"><a href="mailto:{{ .Data.cv.contact.email }}">{{ .Data.cv.contact.email }}</a></p>
+          <p class="fs-3">{{ .Data.Contact.Name }}</h5>
+          <p class="mb-1">{{ .Data.Contact.Location }}</p>
+          <p class="mb-1"><a href="tel:{{ .Data.Contact.Phone }}">{{ .Data.Contact.Phone }}</a></p>
+          <p class="mb-1"><a href="mailto:{{ .Data.Contact.Email }}">{{ .Data.Contact.Email }}</a></p>
           <p class="mb-3">GitHub:
-            {{ range $i, $username := .Data.cv.contact.github -}}
+            {{ range $i, $username := .Data.Contact.GitHub -}}
             {{- if $i -}}, {{ end }}<a href="https://github.com/{{ $username }}">{{ $username }}</a>
             {{- end }}
           </p>
           <p class="mb-1">Interwego BV</p>
-          <p>{{ .Data.cv.contact.vat_number }}</p>
+          <p>{{ .Data.Contact.VATNumber }}</p>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
           <div class="col-md-4">
             <p class="fw-bold">Professional experience</p>
             <ul>
-              {{ range .Data.cv.experience.professional }}
+              {{ range .Data.Experience.Summary.Professional }}
                 <li>{{ . }}</li>
               {{ end }}
             </ul>
@@ -65,7 +65,7 @@
           <div class="col-md-4">
             <p class="fw-bold">Personal experience</p>
             <ul>
-              {{ range .Data.cv.experience.personal }}
+              {{ range .Data.Experience.Summary.Personal }}
                 <li>{{ . }}</li>
               {{ end }}
             </ul>
@@ -74,11 +74,11 @@
           <div class="col-md-4">
             <p class="fw-bold">Certifications</p>
             <ul>
-              {{ range .Data.cv.certifications }}
-                {{ if .link }}
-                <li><a href="{{ .link }}">{{ .name }}</a></li>
+              {{ range .Data.Certifications }}
+                {{ if .Link }}
+                <li><a href="{{ .Link }}">{{ .Name }}</a></li>
                 {{ else }}
-                <li>{{ .name }}</li>
+                <li>{{ .Name }}</li>
                 {{ end }}
               {{ end }}
             </ul>
@@ -324,16 +324,16 @@
           </div>
         </div>
 
-        {{ range .Data.cv.certifications }}
+        {{ range .Data.Certifications }}
           <div class="row">
               <div class="col-4 col-sm-3 col-md-2">
-                <p>{{ .year }}</p>
+                <p>{{ .Year }}</p>
               </div>
               <div class="col-6 col-sm-9 col-md-10">
-              {{ if .link }}
-              <p><a href="{{ .link }}">{{ .name }}</a></p>
+              {{ if .Link }}
+              <p><a href="{{ .Link }}">{{ .Name }}</a></p>
               {{ else }}
-              <p>{{ .name }}</p>
+              <p>{{ .Name }}</p>
               {{ end }}
             </div>
           </div>
@@ -349,14 +349,14 @@
           </div>
         </div>
 
-        {{ range .Data.cv.trainings }}
+        {{ range .Data.Trainings }}
         <div class="row">
           <div class="col-4 col-sm-3 col-md-2">
-            <p>{{ .year }}</p>
+            <p>{{ .Year }}</p>
           </div>
           <div class="col-6 col-sm-9 col-md-10">
-            <p class="fw-bold">{{ .name }}</p>
-            {{ range .extra }}
+            <p class="fw-bold">{{ .Name }}</p>
+            {{ range .Extra }}
             <p>{{ . }}</p>
             {{ end }}
           </div>
@@ -373,13 +373,13 @@
           </div>
         </div>
 
-        {{ range .Data.cv.languages }}
+        {{ range .Data.Languages }}
         <div class="row">
           <div class="col-4 col-sm-3 col-md-2">
-            <p class="fw-bold">{{ .name }}</p>
+            <p class="fw-bold">{{ .Name }}</p>
           </div>
           <div class="col-6 col-sm-9 col-md-10">
-            <p>{{ .level }}</p>
+            <p>{{ .Level }}</p>
           </div>
         </div>
         {{ end }}
