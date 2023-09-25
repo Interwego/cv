@@ -1,5 +1,5 @@
-github.com/JenswBE/go-pipeline v0.0.0-20230601173844-96658d50d1a2 h1:GwiXS93F0NQhPlGBcgcBzNlwfw18fZWAaCRAW5JAHHQ=
-github.com/JenswBE/go-pipeline v0.0.0-20230601173844-96658d50d1a2/go.mod h1:HZ9RRXq9hVqnglXFfHFOnqTrNBYjjy5Soh7CRbaNRLI=
+github.com/JenswBE/go-pipeline v1.0.0 h1:pCCSRSgDUNXiix02Z68YB8fi+EneP3erprSo+w1w+CY=
+github.com/JenswBE/go-pipeline v1.0.0/go.mod h1:HZ9RRXq9hVqnglXFfHFOnqTrNBYjjy5Soh7CRbaNRLI=
 github.com/coreos/go-systemd/v22 v22.5.0/go.mod h1:Y58oyj3AT4RCenI/lSvhwexgC+NSVTIJ3seZv2GcEnc=
 github.com/godbus/dbus/v5 v5.0.4/go.mod h1:xhWf0FNVPg57R7Z0UbKHbJfkEywrmjJnf7w5xrFpKfA=
 github.com/mattn/go-colorable v0.1.12 h1:jF+Du6AlPIjs2BiUiQlKOX0rt3SujHxPnksPKZbaA40=
