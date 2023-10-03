@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+      integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      @media print {
+        #main-container {
+          max-width: none;
+        }
+
+        .card-body {
+          padding-bottom: 1.2rem;
+        }
+      }
+    </style>
+
+    <title>Not found - Interwego</title>
+
+    
+    
+  </head>
+
+  <body>
+    
+  <div class="row g-0 mx-0">
+    <div class="col">
+      <div class="card border-0" style="max-height: 100vh;">
+        <img
+          src="/404.png"
+          class="card-img rounded-0"
+          aria-hidden="true"
+          style="height: 100vh; max-height: 100vh; object-fit: cover;"
+        />
+        <div id="error-content" class="card-img-overlay rounded-0">
+          <div class="container h-100">
+            <div class="d-flex flex-column h-100 justify-content-center text-center">
+              <h1>Page not found</h1>
+              <div>
+                <a class="btn btn-light mt-4" href="/" role="button">
+                  To start
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <script>
+      
+      
+      function updateTheme() {
+        const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
+          .matches
+          ? "dark"
+          : "light";
+        document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+      }
+
+      
+      updateTheme();
+
+      
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", updateTheme);
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"
+      integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
