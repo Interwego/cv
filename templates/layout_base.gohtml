@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+      integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      @media print {
+        #main-container {
+          max-width: none;
+        }
+
+        .card-body {
+          padding-bottom: 1.2rem;
+        }
+      }
+    </style>
+
+    <title>{{ block "title" . }}{{ end }}</title>
+
+    <!-- Extra head content -->
+    {{ block "head" . }}{{ end }}
+  </head>
+
+  <body>
+    {{ block "content" . }}{{ end }}
+
+    <script>
+      // Based on https://stackoverflow.com/a/75065536
+      // Set theme to the user's preferred color scheme
+      function updateTheme() {
+        const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
+          .matches
+          ? "dark"
+          : "light";
+        document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+      }
+
+      // Set theme on load
+      updateTheme();
+
+      // Update theme when the preferred scheme changes
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", updateTheme);
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"
+      integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    {{ block "body_end" . }}{{ end }}
+
+  </body>
+</html>

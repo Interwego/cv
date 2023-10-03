@@ -1,12 +1,18 @@
 package data
 
 type Contact struct {
-	Name      string
-	Location  string
-	Phone     string
-	Email     string
-	GitHub    []string
-	VATNumber string
+	Name        string
+	Location    string
+	Phone       string
+	Email       string
+	GitHub      []string
+	CompanyName string
+	VATNumber   string
+	Website     string
+	TermsPage   string
+	IBAN        string
+	// https://nl.wikipedia.org/wiki/Gerechtelijk_arrondissement
+	LegalDistrict string
 }
 
 func GetContact() Contact {
@@ -19,6 +25,11 @@ func GetContact() Contact {
 			"JenswBE",
 			"Interwego",
 		},
-		VATNumber: "BE0805.449.002",
+		CompanyName:   "Interwego BV",
+		VATNumber:     "BE0805.449.002",
+		Website:       "https://interwego.com",
+		TermsPage:     "/algemene-voorwaarden/",
+		IBAN:          "BE56 0689 4974 2888",
+		LegalDistrict: "Brussel",
 	}
 }

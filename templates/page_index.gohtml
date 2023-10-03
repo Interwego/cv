@@ -1,33 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!-- Base layout -->
+{{ template "layout_base.gohtml" . }}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="referrer" content="no-referrer" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interwego</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
-    integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
 
-  <style>
-    @media print {
-      #main-container {
-        max-width: none;
-      }
+<!-- Title -->
+{{ define "title" }}Interwego{{ end }}
 
-      .card-body {
-        padding-bottom: 1.2rem;
-      }
-    }
-  </style>
-</head>
 
-<body>
+<!-- Body content -->
+{{ define "content" }}
   <div id="main-container" class="container">
     <div class="row">
       <div class="col-12">
@@ -40,19 +20,21 @@
         <img src="jens.jpg" class="img-fluid rounded-circle p-3" style="max-width: 300px; width: 100%;" alt="Jens Willemsens">
       </div>
       <div class="col-sm-6">
-        <div class="text-center text-sm-start">
-          <p class="fs-3">{{ .Data.Contact.Name }}</h5>
-          <p class="mb-1">{{ .Data.Contact.Location }}</p>
-          <p class="mb-1"><a href="tel:{{ .Data.Contact.Phone }}">{{ .Data.Contact.Phone }}</a></p>
-          <p class="mb-1"><a href="mailto:{{ .Data.Contact.Email }}">{{ .Data.Contact.Email }}</a></p>
-          <p class="mb-3">GitHub:
-            {{ range $i, $username := .Data.Contact.GitHub -}}
-            {{- if $i -}}, {{ end }}<a href="https://github.com/{{ $username }}">{{ $username }}</a>
-            {{- end }}
-          </p>
-          <p class="mb-1">Interwego BV</p>
-          <p>{{ .Data.Contact.VATNumber }}</p>
-        </div>
+        {{ with .Data.Contact }}
+          <div class="text-center text-sm-start">
+            <p class="fs-3">{{ .Name }}</h5>
+            <p class="mb-1">{{ .Location }}</p>
+            <p class="mb-1"><a href="tel:{{ .Phone }}">{{ .Phone }}</a></p>
+            <p class="mb-1"><a href="mailto:{{ .Email }}">{{ .Email }}</a></p>
+            <p class="mb-3">GitHub:
+              {{ range $i, $username := .GitHub -}}
+              {{- if $i -}}, {{ end }}<a href="https://github.com/{{ $username }}">{{ $username }}</a>
+              {{- end }}
+            </p>
+            <p class="mb-1">{{ .CompanyName }}</p>
+            <p>{{ .VATNumber }}</p>
+          </div>
+        {{ end }}
       </div>
     </div>
 
@@ -414,32 +396,4 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Based on https://stackoverflow.com/a/75065536
-    // Set theme to the user's preferred color scheme
-    function updateTheme() {
-      const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      document.querySelector("html").setAttribute("data-bs-theme", colorMode);
-    }
-
-    // Set theme on load
-    updateTheme();
-
-    // Update theme when the preferred scheme changes
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", updateTheme);
-  </script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"
-    integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-</body>
-
-</html>
+{{ end }}

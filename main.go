@@ -1,7 +1,9 @@
 package main
 
 import (
+	"net/url"
 	"os/exec"
+	"text/template"
 
 	"github.com/JenswBE/cv/data"
 	"github.com/JenswBE/go-pipeline/pipeline"
@@ -17,13 +19,19 @@ func main() {
 	}
 
 	pipeline.
-		NewHTML(nil).
+		NewHTML(template.FuncMap{
+			"urlJoin": url.JoinPath,
+		}).
+		WithTemplatesDir("templates").
 		WithOutputDir("output").
+		LoadGlob("layout_*.gohtml").
 		SetData("Certifications", data.GetCertifications()).
 		SetData("Contact", data.GetContact()).
 		SetData("Experience", data.GetExperience()).
 		SetData("Languages", data.GetLanguages()).
 		SetData("Trainings", data.GetTrainings()).
-		LoadRenderSingle("cv.gohtml", "index.html").
+		LoadRenderSingle("page_index.gohtml", "index.html").
+		LoadRenderSingle("page_404.gohtml", "404.html").
+		LoadRenderSingle("page_algemene-voorwaarden.gohtml", "algemene-voorwaarden/index.html").
 		Must()
 }
