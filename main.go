@@ -5,7 +5,7 @@ import (
 	"os/exec"
 	"text/template"
 
-	"github.com/JenswBE/cv/data"
+	"github.com/Interwego/cv/data"
 	"github.com/JenswBE/go-pipeline/pipeline"
 	"github.com/rs/zerolog/log"
 )

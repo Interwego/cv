@@ -1,4 +1,4 @@
-module github.com/JenswBE/cv
+module github.com/Interwego/cv
 
 go 1.21
 
