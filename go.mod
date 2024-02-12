@@ -1,6 +1,6 @@
 module github.com/Interwego/cv
 
-go 1.21
+go 1.22
 
 require (
 	github.com/JenswBE/go-pipeline v1.0.0
