@@ -24,7 +24,6 @@
           <div class="text-center text-sm-start">
             <p class="fs-3">{{ .Name }}</h5>
             <p class="mb-1">{{ .Location }}</p>
-            <p class="mb-1"><a href="tel:{{ .Phone }}">{{ .Phone }}</a></p>
             <p class="mb-1"><a href="mailto:{{ .Email }}">{{ .Email }}</a></p>
             <p class="mb-3">GitHub:
               {{ range $i, $username := .GitHub -}}
