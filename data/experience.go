@@ -27,7 +27,7 @@ func GetExperience() Experience {
 				"Ansible",
 				"Networking with pfSense and Ubiquiti",
 				"Graylog",
-				"LibreNMS",
+				"Zabbix / LibreNMS",
 				"Keycloak",
 			},
 		},
