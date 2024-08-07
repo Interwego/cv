@@ -29,7 +29,16 @@ jobs:
 
       - name: Publish to VPS
         run: |
+          # Trust SSH host keys
+          mkdir -p ~/.ssh/
+          touch ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          echo '${{ vars.SSH_PUBLIC_HOST_KEYS }}' >> ~/.ssh/known_hosts
+
+          # Setup SSH key
           touch ssh_key
           chmod 600 ssh_key
           echo '${{ secrets.SSH_KEY }}' > ssh_key
+
+          # Sync generated files
           rsync --verbose --archive --delete --rsh='ssh -p ${{ vars.SSH_PORT }} -i ssh_key' output/ ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:/
