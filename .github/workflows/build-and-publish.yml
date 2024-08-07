@@ -27,8 +27,9 @@ jobs:
       - name: Generate website
         run: go run .
 
-      - name: Publish to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+      - name: Publish to VPS
+        run: |
+          touch ssh_key
+          chmod 600 ssh_key
+          echo '${{ secrets.SSH_KEY }}' > ssh_key
+          rsync --verbose --archive --delete --rsh='ssh -p ${{ vars.SSH_PORT }} -i ssh_key' output/ ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:/
