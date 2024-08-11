@@ -33,7 +33,7 @@ jobs:
           mkdir -p ~/.ssh/
           touch ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
-          echo '${{ vars.SSH_PUBLIC_HOST_KEYS }}' >> ~/.ssh/known_hosts
+          curl 'https://raw.githubusercontent.com/JenswBE/setup/main/server/files/po/rsyncd-public-keys.txt' >> ~/.ssh/known_hosts
 
           # Setup SSH key
           touch ssh_key
