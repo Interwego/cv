@@ -12,19 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <style>
-      @media print {
-        #main-container {
-          max-width: none;
-        }
-
-        .card-body {
-          padding-bottom: 1.2rem;
-        }
-      }
-    </style>
-
+    <link rel="stylesheet" href="/style.css" />
     <title>{{ block "title" . }}{{ end }}</title>
 
     <!-- Extra head content -->
@@ -34,25 +22,7 @@
   <body>
     {{ block "content" . }}{{ end }}
 
-    <script>
-      // Based on https://stackoverflow.com/a/75065536
-      // Set theme to the user's preferred color scheme
-      function updateTheme() {
-        const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
-          .matches
-          ? "dark"
-          : "light";
-        document.querySelector("html").setAttribute("data-bs-theme", colorMode);
-      }
-
-      // Set theme on load
-      updateTheme();
-
-      // Update theme when the preferred scheme changes
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", updateTheme);
-    </script>
+    <script src="/update-theme.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"
       integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=="
@@ -60,7 +30,7 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script data-goatcounter="https://stats.interwego.com/count" async src="//stats.interwego.com/count.js"></script>
+    <script data-goatcounter="https://stats.interwego.com/count" async src="https//stats.interwego.com/count.js"></script>
 
     {{ block "body_end" . }}{{ end }}
 
