@@ -1,5 +1,6 @@
 name: Build and publish
 on:
+  pull_request:
   push:
     branches: [main]
   workflow_dispatch:
@@ -33,6 +34,7 @@ jobs:
         run: go run .
 
       - name: Publish to VPS
+        if: github.event_name != 'pull_request'
         run: |
           # Trust SSH host keys
           mkdir -p ~/.ssh/
