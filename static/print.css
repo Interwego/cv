@@ -1,0 +1,23 @@
+#main-container {
+  max-width: none;
+}
+
+.card-body {
+  padding-bottom: 1.2rem;
+}
+
+.print-hide {
+  display: none;
+}
+
+.print-avoid-break {
+  break-inside: avoid;
+}
+
+#index-avatar {
+  max-width: 230px;
+}
+
+.fw-bold {
+  margin-bottom: 0.5rem;
+}
