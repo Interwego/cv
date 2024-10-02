@@ -21,3 +21,11 @@
 .fw-bold {
   margin-bottom: 0.5rem;
 }
+
+.accordion-button::after {
+  display: none;
+}
+
+.accordion-item {
+  border: 0;
+}
